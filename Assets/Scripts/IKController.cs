@@ -24,6 +24,8 @@ public class IKController : MonoBehaviour
     void OnAnimatorIK()
     {
         transform.localPosition = new Vector3(center.transform.position.x,transform.localPosition.y,center.transform.position.z+0.18f) ;
+        //transform.localPosition = center.position;
+        transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
         {
             if (ikActive)
