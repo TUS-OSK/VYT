@@ -8,7 +8,7 @@ public class IKController : MonoBehaviour
 {
 
     protected Animator animator;
-    
+    public Transform center;
     public bool ikActive;
     public Transform rightHandObj;
     public Transform leftHandObj;
@@ -23,6 +23,7 @@ public class IKController : MonoBehaviour
     
     void OnAnimatorIK()
     {
+        transform.localPosition = new Vector3(center.transform.position.x,transform.localPosition.y,center.transform.position.z+0.18f) ;
         if (animator)
         {
             if (ikActive)

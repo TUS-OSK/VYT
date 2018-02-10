@@ -8695,15 +8695,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: bdc80578da39bd24bac1485075ba0a4f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.47
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: bdc80578da39bd24bac1485075ba0a4f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.47
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: bdc80578da39bd24bac1485075ba0a4f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.47
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: bdc80578da39bd24bac1485075ba0a4f, type: 3}
       propertyPath: m_CullingMode
@@ -12675,6 +12675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2d4507b2bf5544fa24276395226a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  center: {fileID: 1543470462}
   ikActive: 1
   rightHandObj: {fileID: 772682119}
   leftHandObj: {fileID: 704138697}
@@ -14144,7 +14145,6 @@ GameObject:
   - component: {fileID: 1716388611}
   - component: {fileID: 1716388610}
   - component: {fileID: 1716388609}
-  - component: {fileID: 1716388608}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -14152,13 +14152,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1716388608
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1716388607}
-  m_Enabled: 1
 --- !u!124 &1716388609
 Behaviour:
   m_ObjectHideFlags: 0
@@ -14216,7 +14209,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1716388607}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 2.78, z: 5.37}
+  m_LocalPosition: {x: 0, y: 3.48, z: 5.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18538,6 +18531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2d4507b2bf5544fa24276395226a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  center: {fileID: 0}
   ikActive: 1
   rightHandObj: {fileID: 658760762}
   leftHandObj: {fileID: 658760762}
