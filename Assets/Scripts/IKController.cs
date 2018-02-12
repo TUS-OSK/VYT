@@ -16,15 +16,19 @@ public class IKController : MonoBehaviour
     public Transform leftFootObj;
     public Transform lookObj;
 
-    void Start()
+    private float x;
+    private float z;
+    private void Start()
     {
+        x = transform.localPosition.x;
+        z = transform.localPosition.z;
         animator = GetComponent<Animator>();
+
     }
-    
     void OnAnimatorIK()
     {
-        transform.localPosition = new Vector3(center.transform.position.x,transform.localPosition.y,center.transform.position.z) ;
-        //transform.localPosition = center.position;
+        transform.localPosition = new Vector3(center.transform.position.x+x,transform.localPosition.y,center.transform.position.z+z) ;
+        
         transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
         {
