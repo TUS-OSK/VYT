@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rightHand : handEvent {
+public class rightHand : HandEvent {
     [SerializeField]
     private GameObject lightobj;
 
 	void Update () {
-		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+		if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             lightobj.SetActive(true);
         }
-        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+        if (Device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             lightobj.SetActive(false);
         }

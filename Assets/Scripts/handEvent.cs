@@ -5,12 +5,12 @@ using Valve.VR.InteractionSystem;
 using UniRx;
 
 [RequireComponent(typeof(Hand))]
-public abstract class handEvent : MonoBehaviour {
-    protected Hand hand { get; private set; }
-    protected SteamVR_Controller.Device device { get; private set; }
+public abstract class HandEvent : MonoBehaviour {
+    protected Hand Hand { get; private set; }
+    protected SteamVR_Controller.Device Device { get; private set; }
 
     void Start() {
-        hand = GetComponent<Hand>();
-        device = hand.controller;
+        Hand = GetComponent<Hand>();
+        Device = Hand.controller;
     }
 }

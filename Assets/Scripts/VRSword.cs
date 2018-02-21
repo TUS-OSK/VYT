@@ -76,9 +76,9 @@ public class VRSword : VRObjectBase
             Velocity = (Pos1 - Pos0) / Time.deltaTime;
         }
         Pos0 = transform.position;
-        if (Sindou && device != null)
+        if (Sindou && Device != null)
         {
-            device.TriggerHapticPulse(2000);
+            Device.TriggerHapticPulse(2000);
         }
     }
     private void SindouYameru()

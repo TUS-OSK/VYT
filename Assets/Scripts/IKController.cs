@@ -27,8 +27,10 @@ public class IKController : MonoBehaviour
     }
     void OnAnimatorIK()
     {
-        transform.localPosition = new Vector3(center.transform.position.x+x,transform.localPosition.y,center.transform.position.z+z) ;
-        
+        if (center != null) {
+            transform.localPosition = new Vector3(center.transform.position.x + x, transform.localPosition.y, center.transform.position.z + z);
+        }
+
         transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
         {

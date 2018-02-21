@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bdc80578da39bd24bac1485075ba0a4f
-timeCreated: 1517221887
+timeCreated: 1519208576
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -431,14 +431,6 @@ ModelImporter:
         modified: 0
     - boneName: toe.R
       humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: head.001
-      humanName: LeftEye
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}

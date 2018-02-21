@@ -54,7 +54,7 @@ public abstract class VRObjectBase : MonoBehaviour
     private Vector3 StartPosition;
     private Quaternion StartRotation;
 
-    public Rigidbody rigidBody { get; set; }
+    public Rigidbody RigidBody { get; set; }
 
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers);
 
@@ -75,7 +75,7 @@ public abstract class VRObjectBase : MonoBehaviour
         }
     }
 
-    public SteamVR_Controller.Device device
+    public SteamVR_Controller.Device Device
     {
         get
         {
@@ -103,22 +103,22 @@ public abstract class VRObjectBase : MonoBehaviour
         }
 
 
-        rigidBody = GetComponent<Rigidbody>();
+        RigidBody = GetComponent<Rigidbody>();
 
         if (VRObjectMode != VRObjectMode.NeverMove)
         {
             if (ObjectTag == "") { transform.tag = "VRItem"; }
             else { transform.tag = ObjectTag; }
 
-            if (rigidBody == null)
+            if (RigidBody == null)
             {
-                rigidBody = gameObject.AddComponent<Rigidbody>();
+                RigidBody = gameObject.AddComponent<Rigidbody>();
             }
-            rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            rigidBody.useGravity = UseGravity;
+            RigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            RigidBody.useGravity = UseGravity;
             if (Mass != 0)
             {
-                rigidBody.mass = Mass;
+                RigidBody.mass = Mass;
             }
 
             //VelocityEstimat追加
@@ -154,7 +154,7 @@ public abstract class VRObjectBase : MonoBehaviour
         }
         else
         {
-            DestroyImmediate(rigidBody);
+            DestroyImmediate(RigidBody);
         }
 
         GameObject system = GameObject.Find("System");
@@ -164,8 +164,8 @@ public abstract class VRObjectBase : MonoBehaviour
     {
         if (Respawn)
         {
-            rigidBody.velocity = new Vector3();
-            rigidBody.angularVelocity = new Vector3();
+            RigidBody.velocity = new Vector3();
+            RigidBody.angularVelocity = new Vector3();
             transform.position = StartPosition;
             transform.rotation = StartRotation;
 
@@ -183,15 +183,15 @@ public abstract class VRObjectBase : MonoBehaviour
                 {
                     hand.HoverLock(GetComponent<Interactable>());
                     hand.AttachObject(gameObject, attachmentFlags);
-                    rigidBody.useGravity = false;
-                    rigidBody.isKinematic = true;
+                    RigidBody.useGravity = false;
+                    RigidBody.isKinematic = true;
                 }
                 else
                 {
                     hand.DetachObject(gameObject);
                     hand.HoverUnlock(GetComponent<Interactable>());
-                    rigidBody.useGravity = UseGravity;
-                    rigidBody.isKinematic = false;
+                    RigidBody.useGravity = UseGravity;
+                    RigidBody.isKinematic = false;
                 }
             }
         }
@@ -210,15 +210,15 @@ public abstract class VRObjectBase : MonoBehaviour
         {
             transform.tag = "VRItem";
 
-            if (rigidBody == null)
+            if (RigidBody == null)
             {
-                rigidBody = gameObject.AddComponent<Rigidbody>();
+                RigidBody = gameObject.AddComponent<Rigidbody>();
             }
-            rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            rigidBody.useGravity = UseGravity;
+            RigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            RigidBody.useGravity = UseGravity;
             if (Mass != 0)
             {
-                rigidBody.mass = Mass;
+                RigidBody.mass = Mass;
             }
 
             if (VRObjectMode == VRObjectMode.Grabable)
@@ -254,7 +254,7 @@ public abstract class VRObjectBase : MonoBehaviour
         }
         else
         {
-            DestroyImmediate(rigidBody);
+            DestroyImmediate(RigidBody);
             Throwable thro = gameObject.GetComponent<Throwable>();
             if (thro) Destroy(thro);
         }
