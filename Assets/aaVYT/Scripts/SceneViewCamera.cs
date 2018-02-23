@@ -16,16 +16,26 @@ public class SceneViewCamera : MonoBehaviour
     private float rotateSpeed = 0.3f;
     [SerializeField]
     private float MoveSpeed;
+    [SerializeField]
+    private GameObject startObj;
     private Vector3 preMousePos;
-    private Rigidbody m_Rigidbody;
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        transform.position = startObj.transform.position;
     }
     private void Update()
     {
         MouseUpdate();
         Move();
+        if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                transform.position -= new Vector3(0, 0.02f, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(0,0.02f,0);
+            }
+        }
         return;
     }
     private void Move()

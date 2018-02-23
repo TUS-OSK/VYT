@@ -194,44 +194,43 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
 
 	{
 
-		if (enableVisemeSignals)
+        if (enableVisemeSignals)
 
-		{
+        {
 
-			// Capture buttons 1 through 0 (1 = 0, 0 = 10 :) )
+            // Capture buttons 1 through 0 (1 = 0, 0 = 10 :) )
 
-			CheckVisemeKey(KeyCode.Alpha1, 0, 100); 
+            CheckVisemeKey(KeyCode.Alpha1, 0, 100);
 
-			CheckVisemeKey(KeyCode.Alpha2, 1, 100); 
+            CheckVisemeKey(KeyCode.Alpha2, 1, 100);
 
-			CheckVisemeKey(KeyCode.Alpha3, 2, 100); 
+            CheckVisemeKey(KeyCode.Alpha3, 2, 100);
 
-			CheckVisemeKey(KeyCode.Alpha4, 3, 100); 
+            CheckVisemeKey(KeyCode.Alpha4, 3, 100);
 
-			CheckVisemeKey(KeyCode.Alpha5, 4, 100); 
+            CheckVisemeKey(KeyCode.Alpha5, 4, 100);
 
-			CheckVisemeKey(KeyCode.Alpha6, 5, 100); 
+            CheckVisemeKey(KeyCode.Alpha6, 5, 100);
 
-			CheckVisemeKey(KeyCode.Alpha7, 6, 100); 
+            CheckVisemeKey(KeyCode.Alpha7, 6, 100);
 
-			CheckVisemeKey(KeyCode.Alpha8, 7, 100); 
+            CheckVisemeKey(KeyCode.Alpha8, 7, 100);
 
-			CheckVisemeKey(KeyCode.Alpha9, 8, 100); 
+            CheckVisemeKey(KeyCode.Alpha9, 8, 100);
 
-			CheckVisemeKey(KeyCode.Alpha0, 9, 100); 
+            CheckVisemeKey(KeyCode.Alpha0, 9, 100);
 
-			CheckVisemeKey(KeyCode.Q,     10, 100); 
+            CheckVisemeKey(KeyCode.Q, 10, 100);
 
-			CheckVisemeKey(KeyCode.W,     11, 100); 
+            CheckVisemeKey(KeyCode.W, 11, 100);
 
-			CheckVisemeKey(KeyCode.E,     12, 100); 
+            CheckVisemeKey(KeyCode.E, 12, 100);
 
-			CheckVisemeKey(KeyCode.R,     13, 100); 
+            CheckVisemeKey(KeyCode.R, 13, 100);
 
-			CheckVisemeKey(KeyCode.T,     14, 100); 
+            CheckVisemeKey(KeyCode.T, 14, 100);
 
-		}
-
+        }
 	}
 
 	
