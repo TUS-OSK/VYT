@@ -157,7 +157,7 @@ public abstract class VRObjectBase : MonoBehaviour
             DestroyImmediate(RigidBody);
         }
 
-        GameObject system = GameObject.Find("System");
+        //GameObject system = GameObject.Find("System");
     }
 
     public virtual void LateUpdate()

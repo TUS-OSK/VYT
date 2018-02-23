@@ -7,11 +7,9 @@ public class foot : MonoBehaviour {
     private Transform center;
     [SerializeField]
     private Transform rotatecenter;
-    private float x;
     private float y;
     private void Start()
     {
-        x = transform.position.x;
         y = transform.position.y;
 
     }

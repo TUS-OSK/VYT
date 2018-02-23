@@ -14,7 +14,14 @@ public class IKController : MonoBehaviour
     public Transform leftHandObj;
     public Transform rightFootObj;
     public Transform leftFootObj;
-    public Transform lookObj;
+    public GameObject lookObj;
+    
+    public Transform center2;
+    public Transform rightHandObj2;
+    public Transform leftHandObj2;
+    public Transform rightFootObj2;
+    public Transform leftFootObj2;
+    public GameObject lookObj2;
 
     private float x;
     private float z;
@@ -23,14 +30,20 @@ public class IKController : MonoBehaviour
         x = transform.localPosition.x;
         z = transform.localPosition.z;
         animator = GetComponent<Animator>();
-
+        if (!lookObj.activeInHierarchy) {
+            center = center2;
+            rightHandObj = rightHandObj2;
+            leftHandObj = leftHandObj2;
+            rightFootObj = rightFootObj2;
+            leftFootObj = leftFootObj2;
+            lookObj = lookObj2;
+        }
     }
     void OnAnimatorIK()
     {
         if (center != null) {
-            transform.localPosition = new Vector3(center.transform.position.x + x, transform.localPosition.y, center.transform.position.z + z);
+            transform.localPosition = new Vector3(center.transform.position.x , transform.localPosition.y, center.transform.position.z);
         }
-
         transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
         {
@@ -39,7 +52,7 @@ public class IKController : MonoBehaviour
                 if (lookObj != null)
                 {
                     animator.SetLookAtWeight(1);
-                    animator.SetLookAtPosition(lookObj.position);
+                    animator.SetLookAtPosition(lookObj.transform.position);
                 }
                 if (rightHandObj != null)
                 {

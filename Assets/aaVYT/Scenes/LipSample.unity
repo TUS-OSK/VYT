@@ -188,9 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 36602857}
-  VisemeToBlendTargets: 000000000000000000000000000000000000000000000000000000000000000000000000000000000600000009000000070000000a00000008000000
+  VisemeToBlendTargets: 00000000000000000000000000000000000000000000000000000000000000000000000000000000060000000500000007000000020000000a000000
   enableVisemeSignals: 0
-  KeySendVisemeSignal: 000000000000000000000000000000000000000000000000000000000000000000000000000000000600000009000000070000000a00000008000000
+  KeySendVisemeSignal: 00000000000000000000000000000000000000000000000000000000000000000000000000000000060000000500000007000000020000000a000000
   SmoothAmount: 100
 --- !u!114 &496682371
 MonoBehaviour:
@@ -374,7 +374,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380352916}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.405, z: 0.66}
+  m_LocalPosition: {x: 0, y: 1.23, z: 0.393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -449,7 +449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700024, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[7]
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 13700024, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[8]
