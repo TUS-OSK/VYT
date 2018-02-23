@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: ac75d16809dc0054d8e3449e7ba665f2
-timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: ambientLight1
     100002: ambientLight2
@@ -617,8 +616,6 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -629,7 +626,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: JUMP00
@@ -1051,10 +1047,7 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -1070,7 +1063,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 4
-    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

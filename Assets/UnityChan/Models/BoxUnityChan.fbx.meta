@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: d6dad0fb52ba12f458cc7ffb66882391
-timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: ArmL
     100002: ArmR
@@ -465,8 +464,6 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -477,7 +474,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -485,10 +481,7 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -504,7 +497,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 4
-    normalCalculationMode: 0
   importAnimation: 0
   copyAvatar: 0
   humanDescription:

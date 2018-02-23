@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: e54e2e1fa0a994b389fe0654511fac47
-timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: BLW_DEF
     100002: button
@@ -402,8 +401,6 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -414,7 +411,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: WAIT02
@@ -750,10 +746,7 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -769,7 +762,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 4
-    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
