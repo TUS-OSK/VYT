@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88322d031d6bac4da55b9210d595286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  link: http://google.com
+  link: http://alfred.computer
 --- !u!4 &1819923475
 Transform:
   m_ObjectHideFlags: 0

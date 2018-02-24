@@ -7,6 +7,7 @@ public class HandShake : HandEvent
     [SerializeField]
     private GameObject Player;
     private Animator animator;
+    [SerializeField]
     private bool right;
     private int startint;
     [SerializeField]
