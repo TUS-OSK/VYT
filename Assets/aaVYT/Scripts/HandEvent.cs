@@ -6,12 +6,15 @@ using UniRx;
 
 [RequireComponent(typeof(Hand))]
 public abstract class HandEvent : MonoBehaviour {
-    protected Hand Hand { get; private set; }
+    protected Hand Hand
+    {
+        get
+        {
+            return GetComponent<Hand>();
+        }
+    }
     protected SteamVR_Controller.Device Device { get {
             return Hand.controller;
         } }
 
-    void Start() {
-        Hand = GetComponent<Hand>();
-    }
 }
