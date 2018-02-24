@@ -16,7 +16,7 @@ public class IKController : MonoBehaviour
     public Transform rightFootObj;
     public Transform leftFootObj;
     public GameObject lookObj;
-    
+
     public Transform center2;
     public Transform rightHandObj2;
     public Transform leftHandObj2;
@@ -27,6 +27,13 @@ public class IKController : MonoBehaviour
     public GameObject MainObj;
     public Hand rightHand;
     public Hand leftHand;
+
+    [SerializeField]
+    private Vector3 rotateeuler;
+    [SerializeField]
+    private Vector3 rotateeuler2;
+    private Quaternion magarurotate;
+    private Quaternion massugurotate;
     private float x;
     private float z;
     private void Start()
@@ -45,13 +52,17 @@ public class IKController : MonoBehaviour
         }
         else
         {
-            MainObj.transform.position = new Vector3(Head.transform.position.x,MainObj.transform.position.y,Head.transform.position.z);
+            MainObj.transform.position = new Vector3(Head.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
         }
+
+        magarurotate = Quaternion.Euler(rotateeuler);
+        massugurotate = Quaternion.Euler(rotateeuler2);
     }
     void OnAnimatorIK()
     {
-        if (center != null) {
-            transform.localPosition = new Vector3(center.transform.position.x , center.transform.position.y, center.transform.position.z);
+        if (center != null)
+        {
+            transform.localPosition = new Vector3(center.transform.position.x, center.transform.position.y, center.transform.position.z);
         }
         //transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
@@ -107,10 +118,11 @@ public class IKController : MonoBehaviour
             }
         }
         if (rightHand.controller != null)
-        { 
-            if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
+        {
+            var rightDevice = rightHand.controller;
+            if (rightDevice.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
-                if (Device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+                if (rightDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger))
                 {
                     animator.SetBoneLocalRotation(HumanBodyBones.RightThumbProximal, magarurotate);
                     animator.SetBoneLocalRotation(HumanBodyBones.RightThumbIntermediate, magarurotate);
@@ -153,7 +165,103 @@ public class IKController : MonoBehaviour
                     animator.SetBoneLocalRotation(HumanBodyBones.RightLittleProximal, magarurotate);
                     animator.SetBoneLocalRotation(HumanBodyBones.RightLittleIntermediate, magarurotate);
                     animator.SetBoneLocalRotation(HumanBodyBones.RightLittleDistal, magarurotate);
-                }//人差し指だけ
+                }
             }
+            else
+            {
+                animator.SetBoneLocalRotation(HumanBodyBones.RightThumbProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightThumbIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightThumbDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.RightIndexProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightIndexIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightIndexDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.RightMiddleProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightMiddleIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightMiddleDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.RightRingProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightRingIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightRingDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.RightLittleProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightLittleIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.RightLittleDistal, massugurotate);
+            }
+        }
+        if (leftHand.controller != null)
+        {
+            var leftDevice = rightHand.controller;
+            if (leftDevice.GetPress(SteamVR_Controller.ButtonMask.Grip))
+            {
+                if (leftDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+                {
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleDistal, magarurotate);
+                }
+                else
+                {
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexProximal, massugurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexIntermediate, massugurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexDistal, massugurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftRingDistal, magarurotate);
+
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleProximal, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleIntermediate, magarurotate);
+                    animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleDistal, magarurotate);
+                }
+            }
+            else
+            {
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftThumbDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftIndexDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftMiddleDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftRingProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftRingIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftRingDistal, massugurotate);
+
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleProximal, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleIntermediate, massugurotate);
+                animator.SetBoneLocalRotation(HumanBodyBones.LeftLittleDistal, massugurotate);
+            }
+        }
     }
 }

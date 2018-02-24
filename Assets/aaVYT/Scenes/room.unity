@@ -1940,6 +1940,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &803555919 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 803555918}
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+--- !u!114 &803555920 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 803555918}
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
 --- !u!4 &803555921 stripped
 Transform:
   m_PrefabParentObject: {fileID: 494198, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
@@ -2335,25 +2347,6 @@ Transform:
   m_Father: {fileID: 803555924}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1224968564 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
-  m_PrefabInternal: {fileID: 803555918}
---- !u!114 &1224968565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1224968564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86483268ff1d0c94299d7926a37dd54f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1691363975}
-  right: 1
-  rotateeuler: {x: 0, y: 180, z: 0}
-  rotateeuler2: {x: 0, y: 0, z: 0}
 --- !u!1 &1284765621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,6 +4399,10 @@ MonoBehaviour:
   lookObj2: {fileID: 0}
   Head: {fileID: 0}
   MainObj: {fileID: 0}
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
+  rotateeuler: {x: 0, y: 0, z: 0}
+  rotateeuler2: {x: 0, y: 0, z: 0}
 --- !u!1 &1592209422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,6 +4587,10 @@ MonoBehaviour:
   lookObj2: {fileID: 848705293}
   Head: {fileID: 814303154}
   MainObj: {fileID: 1349923386}
+  rightHand: {fileID: 803555920}
+  leftHand: {fileID: 803555919}
+  rotateeuler: {x: 0, y: 180, z: 0}
+  rotateeuler2: {x: 0, y: 0, z: 0}
 --- !u!114 &1691363978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4752,25 +4753,6 @@ Transform:
   m_Father: {fileID: 803555922}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1791314219 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 144230, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
-  m_PrefabInternal: {fileID: 803555918}
---- !u!114 &1791314220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1791314219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86483268ff1d0c94299d7926a37dd54f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1691363975}
-  right: 0
-  rotateeuler: {x: 0, y: 180, z: 0}
-  rotateeuler2: {x: 0, y: 0, z: 0}
 --- !u!1 &1792421450
 GameObject:
   m_ObjectHideFlags: 0
