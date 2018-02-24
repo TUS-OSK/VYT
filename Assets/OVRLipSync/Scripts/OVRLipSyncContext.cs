@@ -148,7 +148,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
 
         {
 
-            audioMute = true;
+            audioMute =false;
 
 
 

@@ -1,0 +1,49 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+ 
+(Filename:  Line: 1396)
+
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     1126 MB
+    Driver:   21.20.16.4542
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\Washer\Documents\VYT\Build_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Washer\Documents\VYT\Build_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.045 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+ 
+(Filename:  Line: 1396)
+
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+ 
+(Filename:  Line: 1396)
+
+UnloadTime: 5.256113 ms
+OvrLipSync Awake: Queried SampleRate: 48000 BufferSize: 1024
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2b2c -> priority: 1 
+  Thread -> id: 4b30 -> priority: 1 
