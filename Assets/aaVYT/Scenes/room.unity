@@ -1956,11 +1956,11 @@ Prefab:
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
       propertyPath: controllerPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 168468, guid: 3f39fc63a93686e4a8e9168ee73f24d9, type: 2}
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
       propertyPath: controllerPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 168468, guid: 3f39fc63a93686e4a8e9168ee73f24d9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
   m_IsPrefabParent: 0
@@ -2392,6 +2392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 803555923}
+  Sabun: {x: 0, y: -2.81, z: 0}
 --- !u!1 &1284765621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,6 +4812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 803555925}
+  Sabun: {x: 0, y: -2.81, z: 0}
 --- !u!1 &1792421450
 GameObject:
   m_ObjectHideFlags: 0

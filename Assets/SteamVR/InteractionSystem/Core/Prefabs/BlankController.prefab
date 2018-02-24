@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 11450892}
   - component: {fileID: 11435852}
   - component: {fileID: 11467152}
+  - component: {fileID: 114441275875701458}
   m_Layer: 0
   m_Name: BlankController
   m_TagString: Untagged
@@ -38,7 +39,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168468}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fb3fe54664b917489646492ee8c4993, type: 3}
   m_Name: 
@@ -109,3 +110,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 168468}
   m_IsPrefabParent: 1
+--- !u!114 &114441275875701458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538a0a99eecbb4e4fb25589e74b456d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ModelDasu: 0

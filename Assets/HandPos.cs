@@ -5,8 +5,10 @@ using UnityEngine;
 public class HandPos : MonoBehaviour {
     [SerializeField]
     private GameObject target;
+    [SerializeField]
+    private Vector3 Sabun;
 	void Update () {
         Vector3 pos = target.transform.position;
-        transform.position = new Vector3(pos.x,pos.y-2.81f,pos.z);
+        transform.position = pos + Sabun;
 	}
 }
