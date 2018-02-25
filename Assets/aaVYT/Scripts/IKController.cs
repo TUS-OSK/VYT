@@ -62,12 +62,12 @@ public class IKController : MonoBehaviour
     {
         if (center != null)
         {
-            transform.localPosition = center.transform.position;
+            var p = center.transform.position;
+            transform.localPosition = new Vector3(p.x,transform.localPosition.y,p.z); ;
         }
         if (Tracker.GetComponent<SteamVR_TrackedObject>().isValid) {
             var p = Tracker.transform.position;
-            transform.position =new Vector3(0,0,p.z);
-            Debug.Log("a");
+            transform.position =new Vector3(0,transform.position.y,p.z);
         }
         //transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
@@ -161,6 +161,9 @@ public class IKController : MonoBehaviour
         int r = right ? 0 : 1;
         for (int i = 0; i < 5; i++) {
             Vector3 q = handShakeBool[i]?(right?rightOpenRotate:leftOpenRotate):(right?rightCloseRotate:leftCloseRotate);
+            if (i == 0) {
+                q = handShakeBool[i] ? (!right ? rightOpenRotate : leftOpenRotate) : (!right ? rightCloseRotate : leftCloseRotate);
+            }
             for (int j = 0; j < 3; j++) {
                 BoneRotate(te[r][3*i+j],q);
             }
