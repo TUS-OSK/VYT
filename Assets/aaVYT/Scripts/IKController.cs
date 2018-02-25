@@ -54,21 +54,22 @@ public class IKController : MonoBehaviour
         }
         else
         {
-            MainObj.transform.position = new Vector3(MainObj.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
+            //MainObj.transform.position = new Vector3(MainObj.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
         }
         
     }
     void OnAnimatorIK()
     {
-        if (center != null)
-        {
-            var p = center.transform.position;
-            transform.localPosition = new Vector3(p.x,transform.localPosition.y,p.z); ;
-        }
-        if (Tracker.GetComponent<SteamVR_TrackedObject>().isValid) {
-            var p = Tracker.transform.position;
-            transform.position =new Vector3(0,transform.position.y,p.z);
-        }
+        /////////////*
+        ////////////if (center != null)
+        ////////////{
+        ////////////    var p = center.transform.position;
+        ////////////    transform.localPosition = new Vector3(p.x,transform.localPosition.y,p.z); ;
+        ////////////}
+        ////////////if (Tracker.GetComponent<SteamVR_TrackedObject>().isValid) {
+        ////////////    var p = Tracker.transform.position;
+        ////////////    transform.position =new Vector3(0,transform.position.y,p.z);
+        ////////////}*/
         //transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
         {
