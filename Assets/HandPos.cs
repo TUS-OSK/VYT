@@ -10,5 +10,6 @@ public class HandPos : MonoBehaviour {
 	void Update () {
         Vector3 pos = target.transform.position;
         transform.position = pos + Sabun;
+        transform.rotation = target.transform.rotation;
 	}
 }

@@ -2268,7 +2268,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 443427591290e834c9f01bbd36584405, type: 2}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_ForceIntoRT: 0
@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 803555923}
-  Sabun: {x: 0, y: -2.81, z: 0}
+  Sabun: {x: 0, y: -0.14, z: 0}
 --- !u!1 &1284765621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,8 +4447,12 @@ MonoBehaviour:
   MainObj: {fileID: 0}
   rightHand: {fileID: 0}
   leftHand: {fileID: 0}
-  rotateeuler: {x: 0, y: 0, z: 0}
-  rotateeuler2: {x: 0, y: 0, z: 0}
+  rightOpenRotate: {x: 0, y: 0, z: 0}
+  rightCloseRotate: {x: 0, y: 0, z: 0}
+  leftOpenRotate: {x: 0, y: 0, z: 0}
+  leftCloseRotate: {x: 0, y: 0, z: 0}
+  rightHandBone: 
+  leftHandBone: 
 --- !u!1 &1592209422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,8 +4639,12 @@ MonoBehaviour:
   MainObj: {fileID: 1349923386}
   rightHand: {fileID: 803555920}
   leftHand: {fileID: 803555919}
-  rotateeuler: {x: 0, y: 180, z: 0}
-  rotateeuler2: {x: 0, y: 0, z: 0}
+  rightOpenRotate: {x: 0, y: 90, z: 0}
+  rightCloseRotate: {x: 0, y: 0, z: 0}
+  leftOpenRotate: {x: 0, y: 90, z: 0}
+  leftCloseRotate: {x: 0, y: 0, z: 0}
+  rightHandBone: 2700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000
+  leftHandBone: 18000000190000001a0000001b0000001c0000001c0000001e0000001f00000020000000210000002200000023000000240000002500000026000000
 --- !u!114 &1691363978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4812,7 +4820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 803555925}
-  Sabun: {x: 0, y: -2.81, z: 0}
+  Sabun: {x: 0, y: -0.14, z: 0}
 --- !u!1 &1792421450
 GameObject:
   m_ObjectHideFlags: 0
