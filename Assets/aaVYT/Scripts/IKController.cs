@@ -167,10 +167,7 @@ public class IKController : MonoBehaviour
                 {
                     q = handShakeBool[i] ? (!right ? rightOpenRotate[t] : leftOpenRotate[t]) : (!right ? rightCloseRotate[t] : leftCloseRotate[t]);
                 }
-                for (int j = 0; j < 3; j++)
-                {
-                    BoneRotate(te[r][3 * i + j], q);
-                }
+                BoneRotate(te[r][3 * i + t], q);
             }
         }
         
