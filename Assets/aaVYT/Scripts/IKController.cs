@@ -7,172 +7,152 @@ using Valve.VR.InteractionSystem;
 
 public class IKController : MonoBehaviour
 {
-
-    protected Animator animator;
-    public Transform center;
-    public bool ikActive;
-    public Transform rightHandObj;
-    public Transform leftHandObj;
-    public Transform rightFootObj;
-    public Transform leftFootObj;
-    public GameObject lookObj;
-
-    public Transform center2;
-    public Transform rightHandObj2;
-    public Transform leftHandObj2;
-    public Transform rightFootObj2;
-    public Transform leftFootObj2;
-    public GameObject lookObj2;
-    public GameObject Head;
-    public GameObject MainObj;
-    public Hand rightHand;
-    public Hand leftHand;
+    private Animator animator;
     [SerializeField]
-    private Vector3[] rightOpenRotate,rightCloseRotate,leftOpenRotate,leftCloseRotate;
-    
-    private float x;
-    private float z;
+    private Transform[] IKGoalTransforms;
+    [SerializeField]
+    private AvatarIKGoal[] AvatarIKGoals;
+    [SerializeField]
+    private GameObject[] lookObj;
+    [SerializeField]
+    private GameObject Head;
+    [SerializeField]
+    private Hand rightHand;
+    [SerializeField]
+    private Hand leftHand;
+    private Hand[] Hands;
+    public Vector3[] roThumb, roIndex, roMiddle, roRing, roLittle;
+    public Vector3[] rcThumb, rcIndex, rcMiddle, rcRing, rcLittle;
+    public Vector3[] loThumb, loIndex, loMiddle, loRing, loLittle;
+    public Vector3[] lcThumb, lcIndex, lcMiddle, lcRing, lcLittle;
+    private Vector3[][] rightOpenRotate;
+    private Vector3[][] rightCloseRotate;
+    private Vector3[][] leftOpenRotate;
+    private Vector3[][] leftCloseRotate;
+    private Vector3[][][] hr;
     [SerializeField]
     private HumanBodyBones[] rightHandBone;
     [SerializeField]
     private HumanBodyBones[] leftHandBone;
+    private HumanBodyBones[][] HandBone;
+    [SerializeField]
+    private float BoneMoveSpeed;
+    [SerializeField]
+    private float AnimationWeight;
     [SerializeField]
     private GameObject Tracker;
+    private bool[] handShakeBool;
+    private void Init()
+    {
+        animator = GetComponent<Animator>();
+        rightOpenRotate = new Vector3[5][];
+        rightCloseRotate = new Vector3[5][];
+        leftOpenRotate = new Vector3[5][];
+        leftCloseRotate = new Vector3[5][];
+        Hands = new Hand[2] { rightHand, leftHand };
+        HandBone = new HumanBodyBones[2][] { rightHandBone, leftHandBone };
+        hr = new Vector3[4][][] { rightOpenRotate, rightCloseRotate, leftOpenRotate, leftCloseRotate };
+        handShakeBool = new bool[5];
+        MakeOpenHandShakeArray();
+        MakeRotateArray();
+        SetIKWeight(AnimationWeight);
+    }
+    private void MakeRotateArray()
+    {
+        rightOpenRotate[0] = roThumb;
+        rightOpenRotate[1] = roIndex;
+        rightOpenRotate[2] = roMiddle;
+        rightOpenRotate[3] = roRing;
+        rightOpenRotate[4] = roLittle;
+        rightCloseRotate[0] = rcThumb;
+        rightCloseRotate[1] = rcIndex;
+        rightCloseRotate[2] = rcMiddle;
+        rightCloseRotate[3] = rcRing;
+        rightCloseRotate[4] = rcLittle;
+        leftOpenRotate[0] = loThumb;
+        leftOpenRotate[1] = loIndex;
+        leftOpenRotate[2] = loMiddle;
+        leftOpenRotate[3] = loRing;
+        leftOpenRotate[4] = loLittle;
+        leftCloseRotate[0] = lcThumb;
+        leftCloseRotate[1] = lcIndex;
+        leftCloseRotate[2] = lcMiddle;
+        leftCloseRotate[3] = lcRing;
+        leftCloseRotate[4] = lcLittle;
+    }
+    private void MakeOpenHandShakeArray()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            handShakeBool[i] = true;
+        }
+
+    }
     private void Start()
     {
-        x = transform.localPosition.x;
-        z = transform.localPosition.z;
-        animator = GetComponent<Animator>();
-        if (!lookObj.activeInHierarchy)
-        {
-            center = center2;
-            rightHandObj = rightHandObj2;
-            leftHandObj = leftHandObj2;
-            rightFootObj = rightFootObj2;
-            leftFootObj = leftFootObj2;
-            lookObj = lookObj2;
-        }
-        else
-        {
-            //MainObj.transform.position = new Vector3(MainObj.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
-        }
-        
+        Init();
     }
     void OnAnimatorIK()
     {
-        /////////////*
-        ////////////if (center != null)
-        ////////////{
-        ////////////    var p = center.transform.position;
-        ////////////    transform.localPosition = new Vector3(p.x,transform.localPosition.y,p.z); ;
-        ////////////}
-        ////////////if (Tracker.GetComponent<SteamVR_TrackedObject>().isValid) {
-        ////////////    var p = Tracker.transform.position;
-        ////////////    transform.position =new Vector3(0,transform.position.y,p.z);
-        ////////////}*/
-        //transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
-        if (animator)
+        animator.SetLookAtPosition(lookObj[(lookObj[0] != null) ? 0 : 1].transform.position);
+        for (int i = 0; i < 4; i++)
         {
-            if (ikActive)
+            if (IKGoalTransforms[i] != null)
             {
-                if (lookObj != null)
-                {
-                    animator.SetLookAtWeight(1);
-                    animator.SetLookAtPosition(lookObj.transform.position);
-                }
-                if (rightHandObj != null)
-                {
-                    animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
-                    animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandObj.rotation);
-                }
-                if (leftHandObj != null)
-                {
-                    animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
-                    animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandObj.rotation);
-                }
-                if (rightFootObj != null)
-                {
-                    animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 1);
-                    animator.SetIKPosition(AvatarIKGoal.RightFoot, rightFootObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.RightFoot, rightFootObj.rotation);
-                }
-                if (leftFootObj != null)
-                {
-                    animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 1);
-                    animator.SetIKPosition(AvatarIKGoal.LeftFoot, leftFootObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.LeftFoot, leftFootObj.rotation);
-                }
-            }
-            else
-            {
-                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
-                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
-                animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
-                animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0);
-
-                animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 0);
-                animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 0);
-                animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 0);
-                animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 0);
-                animator.SetLookAtWeight(0);
+                SetIKTransform(AvatarIKGoals[i], IKGoalTransforms[i]);
             }
         }
-        Hand[] hands = new Hand[2];
-        hands[0] = rightHand;
-        hands[1] = leftHand;
-        for (int t = 0; t <= 1; t++) {
-            if (hands[t].controller != null)
+        for (int t = 0; t <= 1; t++)
+        {
+            if (Hands[t].controller != null)
             {
-                var Device = hands[t].controller;
-                bool[] handShakeBool = new bool[5];
+                var Device = Hands[t].controller;
                 if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
                 {
-                    if (!Device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
-                    {
-                        handShakeBool[1] = true;
+                    handShakeBool[1] = !Device.GetPress(SteamVR_Controller.ButtonMask.Trigger);
+                    if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad)) {
+                        Vector2 pos = Device.GetAxis();
+                        float a = pos.y / pos.x;
+                        int i = (a <= 1 && a > -1) ? ((pos.x >= 0) ? 0 : 3) : ((pos.y >= 0) ?2:4);
+                        handShakeBool[i] = !handShakeBool[i];
                     }
                 }
-                else
-                {
-                    for (int i = 0; i < 5; i++)
-                    {
-                        handShakeBool[i] = true;
-                    }
+                if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) {
+                    MakeOpenHandShakeArray();
                 }
                 HandShake(handShakeBool, t == 0);
             }
+
         }
     }
-
-
     private void HandShake(bool[] handShakeBool,bool right) {
-        if (handShakeBool.Length != 5) {
-            Debug.LogError("指の数おかしいよ");
-        }
-        HumanBodyBones[][] te = new HumanBodyBones[2][];
-        te[0] = rightHandBone;
-        te[1] = leftHandBone;
-        int r = right ? 0 : 1;
         for (int i = 0; i < 5; i++) {
             for (int t = 0; t < 3; t++)
             {
-                Vector3 q = handShakeBool[i] ? (right ? rightOpenRotate[t] : leftOpenRotate[t]) : (right ? rightCloseRotate[t] : leftCloseRotate[t]);
-                if (i == 0)
-                {
-                    q = handShakeBool[i] ? (!right ? rightOpenRotate[t] : leftOpenRotate[t]) : (!right ? rightCloseRotate[t] : leftCloseRotate[t]);
-                }
-                BoneRotate(te[r][3 * i + t], q);
+                SetBoneLocalRotation((right ? HandBone[0] : HandBone[1])[3 * i + t], handShakeBool[i] ? (right ? hr[0][i][t] : hr[2][i][t]) : (right ? hr[1][i][t] : hr[3][i][t]));
             }
         }
-        
     }
-    private void BoneRotate(HumanBodyBones bone,Vector3 eulerRotation) {
-        animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
+    private void SetBoneLocalRotation(HumanBodyBones bone,Vector3 eulerRotation) {
+        var r=animator.GetBoneTransform(bone).eulerAngles;
+        animator.SetBoneLocalRotation(bone, Quaternion.Euler(r+(eulerRotation-r).normalized*BoneMoveSpeed));
+    }
+    private void SetIKTransform(AvatarIKGoal goal, Transform t) {
+        animator.SetIKPosition(goal,t.position);
+        animator.SetIKRotation(goal, t.rotation);
+    }
+    private void SetIKWeight(float weight)
+    {
+        foreach (var goal in AvatarIKGoals)
+        {
+            {
+                animator.SetIKRotationWeight(goal, weight);
+            }
+        }
+    }
+    private void SetAnimatorWeight(float weight)
+    {
+        animator.SetLookAtWeight(weight);
+        SetIKWeight(weight);
     }
 }
