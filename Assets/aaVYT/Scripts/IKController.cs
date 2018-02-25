@@ -36,6 +36,8 @@ public class IKController : MonoBehaviour
     private HumanBodyBones[] rightHandBone;
     [SerializeField]
     private HumanBodyBones[] leftHandBone;
+    [SerializeField]
+    private GameObject Tracker;
     private void Start()
     {
         x = transform.localPosition.x;
@@ -52,7 +54,7 @@ public class IKController : MonoBehaviour
         }
         else
         {
-            MainObj.transform.position = new Vector3(Head.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
+            MainObj.transform.position = new Vector3(MainObj.transform.position.x, MainObj.transform.position.y, Head.transform.position.z);
         }
         
     }
@@ -60,7 +62,12 @@ public class IKController : MonoBehaviour
     {
         if (center != null)
         {
-            transform.localPosition = new Vector3(center.transform.position.x, center.transform.position.y, center.transform.position.z);
+            transform.localPosition = center.transform.position;
+        }
+        if (Tracker.GetComponent<SteamVR_TrackedObject>().isValid) {
+            var p = Tracker.transform.position;
+            transform.position =new Vector3(0,0,p.z);
+            Debug.Log("a");
         }
         //transform.localRotation = Quaternion.Euler(0,center.eulerAngles.y,0);
         if (animator)
