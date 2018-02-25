@@ -28,7 +28,7 @@ public class IKController : MonoBehaviour
     public Hand rightHand;
     public Hand leftHand;
     [SerializeField]
-    private Vector3 rightOpenRotate,rightCloseRotate,leftOpenRotate,leftCloseRotate;
+    private Vector3[] rightOpenRotate,rightCloseRotate,leftOpenRotate,leftCloseRotate;
     
     private float x;
     private float z;
@@ -125,7 +125,7 @@ public class IKController : MonoBehaviour
         Hand[] hands = new Hand[2];
         hands[0] = rightHand;
         hands[1] = leftHand;
-        for (int t = 0; t < 1; t++) {
+        for (int t = 0; t <= 1; t++) {
             if (hands[t].controller != null)
             {
                 var Device = hands[t].controller;
@@ -147,7 +147,6 @@ public class IKController : MonoBehaviour
                 HandShake(handShakeBool, t == 0);
             }
         }
-        
     }
 
 
@@ -160,12 +159,17 @@ public class IKController : MonoBehaviour
         te[1] = leftHandBone;
         int r = right ? 0 : 1;
         for (int i = 0; i < 5; i++) {
-            Vector3 q = handShakeBool[i]?(right?rightOpenRotate:leftOpenRotate):(right?rightCloseRotate:leftCloseRotate);
-            if (i == 0) {
-                q = handShakeBool[i] ? (!right ? rightOpenRotate : leftOpenRotate) : (!right ? rightCloseRotate : leftCloseRotate);
-            }
-            for (int j = 0; j < 3; j++) {
-                BoneRotate(te[r][3*i+j],q);
+            for (int t = 0; t < 3; t++)
+            {
+                Vector3 q = handShakeBool[i] ? (right ? rightOpenRotate[t] : leftOpenRotate[t]) : (right ? rightCloseRotate[t] : leftCloseRotate[t]);
+                if (i == 0)
+                {
+                    q = handShakeBool[i] ? (!right ? rightOpenRotate[t] : leftOpenRotate[t]) : (!right ? rightCloseRotate[t] : leftCloseRotate[t]);
+                }
+                for (int j = 0; j < 3; j++)
+                {
+                    BoneRotate(te[r][3 * i + j], q);
+                }
             }
         }
         

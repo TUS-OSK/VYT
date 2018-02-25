@@ -4477,10 +4477,10 @@ MonoBehaviour:
   MainObj: {fileID: 0}
   rightHand: {fileID: 0}
   leftHand: {fileID: 0}
-  rightOpenRotate: {x: 0, y: 0, z: 0}
-  rightCloseRotate: {x: 0, y: 0, z: 0}
-  leftOpenRotate: {x: 0, y: 0, z: 0}
-  leftCloseRotate: {x: 0, y: 0, z: 0}
+  rightOpenRotate: []
+  rightCloseRotate: []
+  leftOpenRotate: []
+  leftCloseRotate: []
   rightHandBone: 
   leftHandBone: 
   Tracker: {fileID: 0}
@@ -4670,10 +4670,22 @@ MonoBehaviour:
   MainObj: {fileID: 1349923386}
   rightHand: {fileID: 803555920}
   leftHand: {fileID: 803555919}
-  rightOpenRotate: {x: 0, y: 0, z: 0}
-  rightCloseRotate: {x: 0, y: 90, z: 0}
-  leftOpenRotate: {x: 0, y: 0, z: 0}
-  leftCloseRotate: {x: 0, y: 90, z: 0}
+  rightOpenRotate:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  rightCloseRotate:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  leftOpenRotate:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  leftCloseRotate:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   rightHandBone: 2700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000
   leftHandBone: 18000000190000001a0000001b0000001c0000001c0000001e0000001f00000020000000210000002200000023000000240000002500000026000000
   Tracker: {fileID: 653453547}
