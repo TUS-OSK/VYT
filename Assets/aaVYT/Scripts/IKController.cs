@@ -55,7 +55,7 @@ public class IKController : MonoBehaviour
         handShakeBool = new bool[5];
         MakeOpenHandShakeArray();
         MakeRotateArray();
-        SetIKWeight(AnimationWeight);
+        
     }
     private void MakeRotateArray()
     {
@@ -94,12 +94,19 @@ public class IKController : MonoBehaviour
     }
     void OnAnimatorIK()
     {
+        debug("OnAnimator");
+        animator.SetLookAtWeight(AnimationWeight);
         animator.SetLookAtPosition(lookObj[(lookObj[0] != null) ? 0 : 1].transform.position);
         for (int i = 0; i < 4; i++)
         {
             if (IKGoalTransforms[i] != null)
             {
-                SetIKTransform(AvatarIKGoals[i], IKGoalTransforms[i]);
+                Vector3 pos = IKGoalTransforms[i].position;
+                Quaternion rot = IKGoalTransforms[i].rotation;
+                animator.SetIKPositionWeight(AvatarIKGoals[i], AnimationWeight);
+                animator.SetIKPosition(AvatarIKGoals[i], pos);
+                animator.SetIKRotationWeight(AvatarIKGoals[i], AnimationWeight);
+                animator.SetIKRotation(AvatarIKGoals[i], rot);
             }
         }
         for (int t = 0; t <= 1; t++)
@@ -117,19 +124,19 @@ public class IKController : MonoBehaviour
                         handShakeBool[i] = !handShakeBool[i];
                     }
                 }
-                if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) {
+                if (!Device.GetPress(SteamVR_Controller.ButtonMask.Grip)) {
                     MakeOpenHandShakeArray();
                 }
-                HandShake(handShakeBool, t == 0);
+                HandShake(handShakeBool, t);
             }
 
         }
     }
-    private void HandShake(bool[] handShakeBool,bool right) {
+    private void HandShake(bool[] handShakeBool,int r) {
         for (int i = 0; i < 5; i++) {
             for (int t = 0; t < 3; t++)
             {
-                SetBoneLocalRotation((right ? HandBone[0] : HandBone[1])[3 * i + t], handShakeBool[i] ? (right ? hr[0][i][t] : hr[2][i][t]) : (right ? hr[1][i][t] : hr[3][i][t]));
+                SetBoneLocalRotation(HandBone[r][3 * i + t], handShakeBool[i] ? hr[2*r][i][t]:hr[2*r+1][i][t]);
             }
         }
     }
@@ -137,22 +144,7 @@ public class IKController : MonoBehaviour
         var r=animator.GetBoneTransform(bone).eulerAngles;
         animator.SetBoneLocalRotation(bone, Quaternion.Euler(r+(eulerRotation-r).normalized*BoneMoveSpeed));
     }
-    private void SetIKTransform(AvatarIKGoal goal, Transform t) {
-        animator.SetIKPosition(goal,t.position);
-        animator.SetIKRotation(goal, t.rotation);
-    }
-    private void SetIKWeight(float weight)
-    {
-        foreach (var goal in AvatarIKGoals)
-        {
-            {
-                animator.SetIKRotationWeight(goal, weight);
-            }
-        }
-    }
-    private void SetAnimatorWeight(float weight)
-    {
-        animator.SetLookAtWeight(weight);
-        SetIKWeight(weight);
+    private void debug(string str) {
+        Debug.Log(str);
     }
 }

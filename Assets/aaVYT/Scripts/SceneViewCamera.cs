@@ -21,7 +21,7 @@ public class SceneViewCamera : MonoBehaviour
     private Vector3 preMousePos;
     private void Start()
     {
-        transform.position = startObj.transform.position;
+        //transform.position = startObj.transform.position;
     }
     private void Update()
     {
@@ -80,7 +80,7 @@ public class SceneViewCamera : MonoBehaviour
     private void MouseWheel(float delta)
     {
         var f = transform.forward;
-        transform.position +=new Vector3(f.x,0,f.z)  * delta * wheelSpeed;
+        transform.position +=new Vector3(f.x,f.y,f.z)  * delta * wheelSpeed;
         return;
     }
 
