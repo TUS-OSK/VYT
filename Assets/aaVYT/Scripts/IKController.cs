@@ -53,7 +53,7 @@ public class IKController : MonoBehaviour
         HandBone = new HumanBodyBones[2][] { rightHandBone, leftHandBone };
         hr = new Vector3[4][][] { rightOpenRotate, rightCloseRotate, leftOpenRotate, leftCloseRotate };
         handShakeBool = new bool[5];
-        MakeOpenHandShakeArray();
+        MakeOpenHandShakeArray(true);
         MakeRotateArray();
         
     }
@@ -80,11 +80,11 @@ public class IKController : MonoBehaviour
         leftCloseRotate[3] = lcRing;
         leftCloseRotate[4] = lcLittle;
     }
-    private void MakeOpenHandShakeArray()
+    private void MakeOpenHandShakeArray(bool isOpen)
     {
         for (int i = 0; i < 5; i++)
         {
-            handShakeBool[i] = true;
+            handShakeBool[i] = isOpen;
         }
 
     }
@@ -116,16 +116,17 @@ public class IKController : MonoBehaviour
                 var Device = Hands[t].controller;
                 if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
                 {
+                    MakeOpenHandShakeArray(false);
                     handShakeBool[1] = !Device.GetPress(SteamVR_Controller.ButtonMask.Trigger);
-                    if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad)) {
+                    if (Device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) {
                         Vector2 pos = Device.GetAxis();
                         float a = pos.y / pos.x;
                         int i = (a <= 1 && a > -1) ? ((pos.x >= 0) ? 0 : 3) : ((pos.y >= 0) ?2:4);
-                        handShakeBool[i] = !handShakeBool[i];
+                        handShakeBool[i] = true;
                     }
                 }
                 else {
-                    MakeOpenHandShakeArray();
+                    MakeOpenHandShakeArray(true);
                 }
             }
             HandShake(handShakeBool, t);

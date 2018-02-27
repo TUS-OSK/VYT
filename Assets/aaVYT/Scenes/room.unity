@@ -524,6 +524,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 125707246}
+  - component: {fileID: 125707247}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -537,17 +538,30 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 125707245}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.172, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1289043398}
   - {fileID: 969542825}
   - {fileID: 2133153788}
   - {fileID: 2088694753}
+  - {fileID: 1691363982}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &125707247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125707245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae1c989002b7c84cb966dba9f0c7133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 814303154}
 --- !u!1 &138898068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1703,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400276, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 431411159}
-  m_LocalRotation: {x: -0.093746535, y: 0.6978551, z: 0.707469, w: 0.06080671}
+  m_LocalRotation: {x: -0.09374654, y: 0.6978552, z: 0.70746905, w: 0.0608067}
   m_LocalPosition: {x: -0.05543403, y: 0.0017306843, z: 0.098653734}
   m_LocalScale: {x: 1.0000004, y: 1.0000006, z: 1.0000005}
   m_Children:
@@ -1794,7 +1808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &438792053
 Transform:
   m_ObjectHideFlags: 0
@@ -3108,7 +3122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &761262370
 Transform:
   m_ObjectHideFlags: 0
@@ -3769,8 +3783,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 848705293}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.852, y: 1.5, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.2, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 391200909}
@@ -3778,7 +3792,7 @@ Transform:
   - {fileID: 391784899}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &848705298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6591,7 +6605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1496858992
 Transform:
   m_ObjectHideFlags: 0
@@ -7453,85 +7467,85 @@ MonoBehaviour:
   rightHand: {fileID: 803555920}
   leftHand: {fileID: 803555919}
   roThumb:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 130.71, y: 40.81, z: 44.2}
+  - {x: 0, y: -1.73, z: 0}
+  - {x: 0, y: 8, z: 0}
   roIndex:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 166, y: 0.02, z: -6.79}
+  - {x: 0, y: 0, z: 2.8}
+  - {x: 0, y: 0, z: -5.36}
   roMiddle:
-  - {x: 0, y: 0, z: 0}
+  - {x: 180.09, y: 0, z: 2.18}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   roRing:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 180.69, y: 0, z: 4.57}
+  - {x: 0, y: 0, z: -4.31}
+  - {x: 0, y: 0, z: 6.28}
   roLittle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 205.11, y: 0, z: -1}
+  - {x: 0, y: 0, z: 8.24}
   - {x: 0, y: 0, z: 0}
   rcThumb:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 99, y: -12.61, z: 22.3}
+  - {x: 0, y: 61.63, z: -14.1}
+  - {x: 0, y: 72.4, z: -15}
   rcIndex:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 166, y: -100.5, z: -10.57}
+  - {x: 0, y: 70.8, z: 12.72}
+  - {x: 0, y: 61.63, z: -5.36}
   rcMiddle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 180.09, y: -90.07, z: 2.18}
+  - {x: 0, y: 64.2, z: 0}
+  - {x: 0, y: 71.8, z: 0}
   rcRing:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 180.69, y: -105.5, z: 4.57}
+  - {x: 0, y: 64.78, z: 12.5}
+  - {x: 0, y: 60.9, z: 4.27}
   rcLittle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 205.11, y: -102.1, z: 22}
+  - {x: 0, y: 72.4, z: -10.3}
+  - {x: 0, y: 148.3, z: -7.84}
   loThumb:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 44.2, y: -9.01, z: -31.73}
+  - {x: -0.03, y: 12.68, z: 3.61}
+  - {x: 0, y: 5.43, z: 0.61}
   loIndex:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 5.71, z: 3.53}
+  - {x: 0, y: -1.3, z: 0}
+  - {x: 0, y: 4.16, z: 0}
   loMiddle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 3.71, z: 0}
+  - {x: 0, y: 2.27, z: 0}
+  - {x: 0, y: 4.07, z: 0}
   loRing:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 7.47, z: -6.25}
+  - {x: 0, y: 4.08, z: 0}
+  - {x: 0, y: 9.93, z: 0}
   loLittle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 3.37, z: 3.22}
+  - {x: 0, y: 3.57, z: -8.6}
+  - {x: 0, y: 12.02, z: -2.21}
   lcThumb:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 152.8, y: 31.4, z: -5.3}
+  - {x: 4.7, y: 12.68, z: -59.42}
+  - {x: 0, y: 52.97, z: -6.9}
   lcIndex:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 89.98, z: 13.4}
+  - {x: 0, y: 73.29, z: 13.7}
+  - {x: 0, y: 112.7, z: 0}
   lcMiddle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 81.8, z: 7.82}
+  - {x: 0, y: 78.38, z: 13.7}
+  - {x: 0, y: 102, z: 0}
   lcRing:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 93.6, z: -2.2}
+  - {x: 0, y: 60, z: 1.8}
+  - {x: 0, y: 85.6, z: -5.31}
   lcLittle:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 87, z: -1.2}
+  - {x: 0, y: 88.4, z: -22.56}
+  - {x: 0, y: 60.37, z: -2.21}
   rightHandBone: 2700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000
   leftHandBone: 18000000190000001a0000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000240000002500000026000000
   BoneMoveSpeed: 1
@@ -7676,14 +7690,14 @@ Transform:
   m_PrefabParentObject: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1691363975}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.261, y: 0.59, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1089022979}
   - {fileID: 1697621624}
   - {fileID: 933990235}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 125707246}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1691363983
