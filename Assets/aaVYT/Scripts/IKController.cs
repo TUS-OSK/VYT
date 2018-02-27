@@ -96,7 +96,7 @@ public class IKController : MonoBehaviour
     {
         debug("OnAnimator");
         animator.SetLookAtWeight(AnimationWeight);
-        animator.SetLookAtPosition(lookObj[(lookObj[0] != null) ? 0 : 1].transform.position);
+        animator.SetLookAtPosition(lookObj[0].transform.position);
         for (int i = 0; i < 4; i++)
         {
             if (IKGoalTransforms[i] != null)
@@ -124,12 +124,12 @@ public class IKController : MonoBehaviour
                         handShakeBool[i] = !handShakeBool[i];
                     }
                 }
-                if (!Device.GetPress(SteamVR_Controller.ButtonMask.Grip)) {
+                else {
                     MakeOpenHandShakeArray();
                 }
-                HandShake(handShakeBool, t);
             }
-
+            HandShake(handShakeBool, t);
+            debug("ぬん");
         }
     }
     private void HandShake(bool[] handShakeBool,int r) {
@@ -141,10 +141,15 @@ public class IKController : MonoBehaviour
         }
     }
     private void SetBoneLocalRotation(HumanBodyBones bone,Vector3 eulerRotation) {
-        var r=animator.GetBoneTransform(bone).eulerAngles;
-        animator.SetBoneLocalRotation(bone, Quaternion.Euler(r+(eulerRotation-r).normalized*BoneMoveSpeed));
+        /*Vector3 r = animator.GetBoneTransform(bone).localEulerAngles;
+        Vector3 m = (eulerRotation - r)/10f;
+        if (m.magnitude < 3) {
+            animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
+        }*/
+        animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
+        debug(bone.ToString()+"の回転は:"+eulerRotation.ToString());
     }
     private void debug(string str) {
-        Debug.Log(str);
+        //Debug.Log(str);
     }
 }
