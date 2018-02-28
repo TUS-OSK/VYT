@@ -1,0 +1,13 @@
+[uDD::Log][2018-03-01 00:12:56] Start
+[uDD::Log][2018-03-01 00:12:56] Duplicator::Initialize() => OK.
+[uDD::Log][2018-03-01 00:12:56]     ID    : 0
+[uDD::Log][2018-03-01 00:12:56]     Size  : (1280, 720)
+[uDD::Log][2018-03-01 00:12:56]     DPI   : (111, 111)
+[uDD::Log][2018-03-01 00:12:56]     Rot   : Landscape
+[uDD::Err][2018-03-01 00:12:56] Monitor::Render() => Texture sizes are defferent.
+[uDD::Err][2018-03-01 00:12:56]     Source : (2560, 1440)
+[uDD::Err][2018-03-01 00:12:56]     Dest   : (1280, 720)
+[uDD::Err][2018-03-01 00:12:57] Monitor::Render() => Texture sizes are defferent.
+[uDD::Err][2018-03-01 00:12:57]     Source : (2560, 1440)
+[uDD::Err][2018-03-01 00:12:57]     Dest   : (1280, 720)
+[uDD::Log][2018-03-01 00:12:57] Stop
