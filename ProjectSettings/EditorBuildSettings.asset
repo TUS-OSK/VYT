@@ -4,7 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/aaVYT/Scenes/room.unity
-    guid: 934ae08d034e41a4e89e06bcb29a7788
+  m_Scenes: []

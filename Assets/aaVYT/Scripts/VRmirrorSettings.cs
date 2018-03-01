@@ -6,7 +6,7 @@ public class VRmirrorSettings : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        UnityEngine.VR.VRSettings.showDeviceView = false;
+        UnityEngine.XR.XRSettings.showDeviceView = false;
 		
 	}
 	
