@@ -16,17 +16,7 @@ public class HumanController : MonoBehaviour {
     [SerializeField]
     private GameObject LeftHandObj;
 
-    private Vector3 HeadLocalPos;
-    private Vector3 RightHandLocalPos;
-    private Vector3 LeftHandLocalPos;
-
-    private void Start()
-    {
-        HeadLocalPos = HeadObj.transform.localPosition;
-        RightHandLocalPos = RightHandObj.transform.localPosition;
-        LeftHandLocalPos = LeftHandObj.transform.localPosition;
-        //transform.rotation = Quaternion.Euler(0,Head.transform.eulerAngles.y,0);
-    }
+   
     private void Update()
     {
         SetHeadTransform();
