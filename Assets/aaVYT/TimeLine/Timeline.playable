@@ -15,6 +15,7 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: 114894353171823420}
   - {fileID: 114322144925044326}
+  - {fileID: 114105349737892336}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -33,6 +34,24 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 4a42edd290618bf4b9213ab7bbdee211
     defaultValue: {fileID: 0}
+--- !u!114 &114105349737892336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778877366, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Playable Track
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
 --- !u!114 &114136351472637794
 MonoBehaviour:
   m_ObjectHideFlags: 1
