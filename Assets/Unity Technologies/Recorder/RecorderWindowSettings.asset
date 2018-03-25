@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0205cb8957891b44b142689caa23987, type: 3}
   m_Name: RecorderWindowSettings
   m_EditorClassIdentifier: 
-  m_Settings: {fileID: 114809191569956888}
---- !u!114 &114058386259077996
+  m_Settings: {fileID: 114031523305332920}
+--- !u!114 &114011812808571104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -24,10 +24,10 @@ MonoBehaviour:
   m_Name: Scene-Stored
   m_EditorClassIdentifier: 
   m_DisplayName: Animation
-  m_Id: 543e24a0-6be6-419c-8f64-4c44fc49e009
+  m_Id: d9cf5aea-d26b-4f42-a003-df7493d52468
   m_TypeName: UnityEditor.Experimental.Recorder.Input.AnimationInputSettings, Assembly-CSharp-Editor,
     Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &114809191569956888
+--- !u!114 &114031523305332920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -40,8 +40,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AssetID: ec9cb161d89296b42ba317ff6b5c1bdd
   m_CaptureEveryNthFrame: 1
-  m_FrameRateMode: 0
-  m_FrameRate: 30
+  m_FrameRateMode: 1
+  m_FrameRate: 60
   m_FrameRateExact: 1
   m_StartFrame: 0
   m_EndFrame: 10
@@ -56,25 +56,9 @@ MonoBehaviour:
     m_leaf: Recordings
   m_InputsSettings:
     m_InputsSettingsAssets:
-    - {fileID: 114875428965673882}
-    - {fileID: 114058386259077996}
+    - {fileID: 114011812808571104}
     ownerRecorderSettingsAssetId: ec9cb161d89296b42ba317ff6b5c1bdd
   m_RecorderTypeName: UnityEditor.Experimental.Recorder.AnimationRecorder, Assembly-CSharp-Editor,
     Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   outputPath: AnimRecorder<take>/<goName>_<input>
-  take: 4
---- !u!114 &114875428965673882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbfd129ef371e0b468332962917d1a8b, type: 3}
-  m_Name: Scene-Stored
-  m_EditorClassIdentifier: 
-  m_DisplayName: Animation
-  m_Id: 73ab8be2-0dd9-41b4-88ef-c1091256d263
-  m_TypeName: UnityEditor.Experimental.Recorder.Input.AnimationInputSettings, Assembly-CSharp-Editor,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  take: 2

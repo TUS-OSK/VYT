@@ -9,8 +9,7 @@ Material:
   m_Name: BlueHuman
   m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
   m_ShaderKeywords: _IS_LIGHTCOLOR_1ST_SHADE_ON _IS_LIGHTCOLOR_2ND_SHADE_ON _IS_LIGHTCOLOR_BASE_ON
-    _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_NORMALMAPTOBASE_ON _IS_NORMALMAPTOHIGHCOLOR_ON
-    _SET_SYSTEMSHADOWSTOBASE_ON
+    _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_NORMALMAPTOHIGHCOLOR_ON _SET_SYSTEMSHADOWSTOBASE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -140,7 +139,7 @@ Material:
     - _Is_LightColor_RimLight: 0
     - _Is_NormalMap: 0
     - _Is_NormalMapForMatCap: 0
-    - _Is_NormalMapToBase: 1
+    - _Is_NormalMapToBase: 0
     - _Is_NormalMapToHighColor: 1
     - _Is_NormalMapToRimLight: 0
     - _Is_SpecularToHighColor: 0
@@ -176,10 +175,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.703, g: 0.716, b: 1, a: 1}
-    - _2nd_ShadeColor: {r: 0, g: 0.553, b: 1, a: 1}
+    - _1st_ShadeColor: {r: 0, g: 0.34602067, b: 1, a: 1}
+    - _2nd_ShadeColor: {r: 0, g: 0, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0, g: 0, b: 1, a: 1}
+    - _BaseColor: {r: 0.5529412, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HighColor: {r: 0, g: 0.73529434, b: 1, a: 1}
