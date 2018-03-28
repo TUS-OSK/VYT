@@ -40,9 +40,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AssetID: ec9cb161d89296b42ba317ff6b5c1bdd
   m_CaptureEveryNthFrame: 1
-  m_FrameRateMode: 1
-  m_FrameRate: 60
-  m_FrameRateExact: 1
+  m_FrameRateMode: 0
+  m_FrameRate: 30
+  m_FrameRateExact: 64
   m_StartFrame: 0
   m_EndFrame: 10
   m_StartTime: 0
@@ -60,5 +60,5 @@ MonoBehaviour:
     ownerRecorderSettingsAssetId: ec9cb161d89296b42ba317ff6b5c1bdd
   m_RecorderTypeName: UnityEditor.Experimental.Recorder.AnimationRecorder, Assembly-CSharp-Editor,
     Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  outputPath: AnimRecorder<take>/<goName>_<input>
-  take: 2
+  outputPath: Blue/<goName>_<input>
+  take: 5
