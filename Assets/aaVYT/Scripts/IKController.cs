@@ -55,6 +55,7 @@ public class IKController : MonoBehaviour
         handShakeBool = new bool[5];
         MakeOpenHandShakeArray(true);
         MakeRotateArray();
+        debug("",58);
         
     }
     private void MakeRotateArray()
@@ -94,7 +95,7 @@ public class IKController : MonoBehaviour
     }
     void OnAnimatorIK()
     {
-        debug("OnAnimator");
+        debug("OnAnimator",97);
         animator.SetLookAtWeight(AnimationWeight);
         animator.SetLookAtPosition(lookObj[0].transform.position);
         for (int i = 0; i < 4; i++)
@@ -107,11 +108,12 @@ public class IKController : MonoBehaviour
                 animator.SetIKPosition(AvatarIKGoals[i], pos);
                 animator.SetIKRotationWeight(AvatarIKGoals[i], AnimationWeight);
                 animator.SetIKRotation(AvatarIKGoals[i], rot);
+                Debug.Log("aaa");
             }
         }
         for (int t = 0; t <= 1; t++)
         {
-            if (Hands[t].controller != null)
+            /*if (Hands[t].controller != null)
             {
                 var Device = Hands[t].controller;
                 if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
@@ -128,9 +130,9 @@ public class IKController : MonoBehaviour
                 else {
                     MakeOpenHandShakeArray(true);
                 }
-            }
-            HandShake(handShakeBool, t);
-            debug("ぬん");
+            }*/
+            //HandShake(handShakeBool, t);
+            //debug("ぬん",133);
         }
     }
     private void HandShake(bool[] handShakeBool,int r) {
@@ -148,9 +150,9 @@ public class IKController : MonoBehaviour
             animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
         }*/
         animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
-        debug(bone.ToString()+"の回転は:"+eulerRotation.ToString());
+        debug(bone.ToString()+"の回転は:"+eulerRotation.ToString(),151);
     }
-    private void debug(string str) {
-        //Debug.Log(str);
+    private void debug(string str,int a) {
+        Debug.Log(a+":"+str);
     }
 }

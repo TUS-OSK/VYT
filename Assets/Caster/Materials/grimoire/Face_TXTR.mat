@@ -24,11 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: ca8614ce2d8e01d4eaccc99d3749b350, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b2e7c68bf2be2e47ad7d350e78ba44e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: ca8614ce2d8e01d4eaccc99d3749b350, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b2e7c68bf2be2e47ad7d350e78ba44e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AngelRing_Sampler:
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ca8614ce2d8e01d4eaccc99d3749b350, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b2e7c68bf2be2e47ad7d350e78ba44e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 87df6eccaef932f4fb670d39acd83a9d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b03b0006bb268f4f92fe235e73cbb65, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapForMatCap:
@@ -96,11 +96,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Set_1st_ShadePosition:
-        m_Texture: {fileID: 2800000, guid: ca8614ce2d8e01d4eaccc99d3749b350, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b2e7c68bf2be2e47ad7d350e78ba44e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Set_2nd_ShadePosition:
-        m_Texture: {fileID: 2800000, guid: ca8614ce2d8e01d4eaccc99d3749b350, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b2e7c68bf2be2e47ad7d350e78ba44e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Set_HighColorMask:
@@ -128,7 +128,7 @@ Material:
     - _AngelRing: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0
-    - _BaseColor_Step: 0
+    - _BaseColor_Step: 0.733
     - _BaseShade_Feather: 0.0001
     - _BumpScale: 1
     - _Clipping_Level: 0
@@ -182,7 +182,7 @@ Material:
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0
+    - _ShadeColor_Step: 0.603
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -193,7 +193,7 @@ Material:
     - _Tweak_LightDirection_MaskLevel: 0.07
     - _Tweak_MatCapUV: 0
     - _Tweak_RimLightMaskLevel: 0
-    - _Tweak_SystemShadowsLevel: -0.24
+    - _Tweak_SystemShadowsLevel: 0.5
     - _Tweak_transparency: 0
     - _UVSec: 0
     - _ZWrite: 1
