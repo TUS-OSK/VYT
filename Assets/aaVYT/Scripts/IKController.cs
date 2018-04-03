@@ -108,12 +108,12 @@ public class IKController : MonoBehaviour
                 animator.SetIKPosition(AvatarIKGoals[i], pos);
                 animator.SetIKRotationWeight(AvatarIKGoals[i], AnimationWeight);
                 animator.SetIKRotation(AvatarIKGoals[i], rot);
-                Debug.Log("aaa");
+
             }
         }
-        for (int t = 0; t <= 1; t++)
+        /*for (int t = 0; t <= 1; t++)
         {
-            /*if (Hands[t].controller != null)
+            if (Hands[t].controller != null)
             {
                 var Device = Hands[t].controller;
                 if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
@@ -130,10 +130,10 @@ public class IKController : MonoBehaviour
                 else {
                     MakeOpenHandShakeArray(true);
                 }
-            }*/
-            //HandShake(handShakeBool, t);
+            }
+            HandShake(handShakeBool, t);
             //debug("ぬん",133);
-        }
+        }*/
     }
     private void HandShake(bool[] handShakeBool,int r) {
         for (int i = 0; i < 5; i++) {
@@ -153,6 +153,6 @@ public class IKController : MonoBehaviour
         debug(bone.ToString()+"の回転は:"+eulerRotation.ToString(),151);
     }
     private void debug(string str,int a) {
-        Debug.Log(a+":"+str);
+        //Debug.Log(a+":"+str);
     }
 }
