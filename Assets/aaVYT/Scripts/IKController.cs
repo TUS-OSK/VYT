@@ -55,7 +55,7 @@ public class IKController : MonoBehaviour
         handShakeBool = new bool[5];
         MakeOpenHandShakeArray(true);
         MakeRotateArray();
-        debug("",58);
+        
         
     }
     private void MakeRotateArray()
@@ -111,7 +111,7 @@ public class IKController : MonoBehaviour
 
             }
         }
-        /*for (int t = 0; t <= 1; t++)
+        for (int t = 0; t <= 1; t++)
         {
             if (Hands[t].controller != null)
             {
@@ -132,8 +132,7 @@ public class IKController : MonoBehaviour
                 }
             }
             HandShake(handShakeBool, t);
-            //debug("ぬん",133);
-        }*/
+        }
     }
     private void HandShake(bool[] handShakeBool,int r) {
         for (int i = 0; i < 5; i++) {
