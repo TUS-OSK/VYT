@@ -92,7 +92,14 @@ public class IKController : MonoBehaviour
     private void Start()
     {
         Init();
+
+        Vector3 a = Head.transform.position;
+        syoki = a;
+        transform.position = new Vector3(a.x, transform.position.y, a.z);
+
     }
+    private Vector3 syoki;
+    
     void OnAnimatorIK()
     {
         debug("OnAnimator",97);
