@@ -41,6 +41,8 @@ public class IKController : MonoBehaviour
     private float AnimationWeight;
     [SerializeField]
     private GameObject Tracker;
+    [SerializeField]
+    private Transform spine;
     private bool[] handShakeBool;
     private void Init()
     {
@@ -96,12 +98,26 @@ public class IKController : MonoBehaviour
         Vector3 a = Head.transform.position;
         syoki = a;
         transform.position = new Vector3(a.x, transform.position.y, a.z);
+        R0 = Tracker.transform.position;
 
     }
     private Vector3 syoki;
-    
+    private Vector3 R0;
+    float HipRotate() {
+        var O = transform.position;
+        var o = new Vector2(O.x,O.z);
+        var r0 = new Vector2(R0.x,R0.z);
+        var or1 = r0 - o;
+        var R1 = Tracker.transform.position;
+        var r1 = new Vector2(R1.x,R1.z);
+        var or2 = r1 - o;
+        return Mathf.Acos(Vector2.Dot(or1,or2)/(or1.sqrMagnitude*or2.sqrMagnitude));
+
+    }
     void OnAnimatorIK()
     {
+        //spine.transform.rotation = Quaternion.Euler(new Vector3(0,HipRotate(),0));
+        SetBoneLocalRotation(HumanBodyBones.Spine, new Vector3(0, HipRotate(), 0));
         debug("OnAnimator",97);
         animator.SetLookAtWeight(AnimationWeight);
         animator.SetLookAtPosition(lookObj[0].transform.position);
