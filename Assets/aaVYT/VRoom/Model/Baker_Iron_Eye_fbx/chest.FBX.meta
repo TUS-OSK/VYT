@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: b024dc8954232ed409f11d0075fe55cf
+timeCreated: 1526428062
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box01
+    100002: Box01 1
+    100004: Box02
+    100006: Box03
+    100008: Box08
+    100010: Box09
+    100012: Box10
+    100014: Box13
+    100016: Box14
+    100018: Box15
+    100020: Box16
+    100022: ChamferBox01
+    100024: ChamferBox02
+    100026: ChamferBox03
+    100028: ChamferBox04
+    100030: ChamferBox05
+    100032: ChamferBox06
+    100034: ChamferBox07
+    100036: ChamferBox08
+    100038: Chest
+    100040: //RootNode
+    100042: Cylinder01
+    100044: Cylinder02
+    100046: Cylinder03
+    100048: Cylinder04
+    100050: Cylinder05
+    100052: Cylinder06
+    100054: Cylinder07
+    100056: Cylinder08
+    100058: Cylinder09
+    100060: Cylinder10
+    100062: Cylinder11
+    100064: Cylinder12
+    100066: Group01w
+    100068: Line01
+    100070: Line01 1
+    100072: Line02
+    100074: Line02 1
+    100076: Loft01
+    100078: Loft01 1
+    100080: Plane03
+    100082: VRayLight01
+    100084: VRayLight02
+    100086: VRayLight03
+    100088: VRayLight04
+    100090: VRayLight06
+    100092: VRayLight07
+    100094: VRayLight08
+    100096: VRayPhysicalCamera01
+    100098: VRayPhysicalCamera01.Target
+    100100: "\u0444\u043E\u043D"
+    400000: Box01
+    400002: Box01 1
+    400004: Box02
+    400006: Box03
+    400008: Box08
+    400010: Box09
+    400012: Box10
+    400014: Box13
+    400016: Box14
+    400018: Box15
+    400020: Box16
+    400022: ChamferBox01
+    400024: ChamferBox02
+    400026: ChamferBox03
+    400028: ChamferBox04
+    400030: ChamferBox05
+    400032: ChamferBox06
+    400034: ChamferBox07
+    400036: ChamferBox08
+    400038: Chest
+    400040: //RootNode
+    400042: Cylinder01
+    400044: Cylinder02
+    400046: Cylinder03
+    400048: Cylinder04
+    400050: Cylinder05
+    400052: Cylinder06
+    400054: Cylinder07
+    400056: Cylinder08
+    400058: Cylinder09
+    400060: Cylinder10
+    400062: Cylinder11
+    400064: Cylinder12
+    400066: Group01w
+    400068: Line01
+    400070: Line01 1
+    400072: Line02
+    400074: Line02 1
+    400076: Loft01
+    400078: Loft01 1
+    400080: Plane03
+    400082: VRayLight01
+    400084: VRayLight02
+    400086: VRayLight03
+    400088: VRayLight04
+    400090: VRayLight06
+    400092: VRayLight07
+    400094: VRayLight08
+    400096: VRayPhysicalCamera01
+    400098: VRayPhysicalCamera01.Target
+    400100: "\u0444\u043E\u043D"
+    2000000: VRayPhysicalCamera01
+    2100000: 21 - Default
+    2100002: Standard_17
+    2100004: 'Material #17trw'
+    2100006: 2
+    2100008: 1
+    2100010: VRayMtl_16
+    2100012: No Name
+    2100014: 02 - Default
+    2300000: Box01
+    2300002: Box01 1
+    2300004: Box02
+    2300006: Box03
+    2300008: Box08
+    2300010: Box09
+    2300012: Box10
+    2300014: Box13
+    2300016: Box14
+    2300018: Box15
+    2300020: Box16
+    2300022: ChamferBox01
+    2300024: ChamferBox02
+    2300026: ChamferBox03
+    2300028: ChamferBox04
+    2300030: ChamferBox05
+    2300032: ChamferBox06
+    2300034: ChamferBox07
+    2300036: ChamferBox08
+    2300038: Cylinder01
+    2300040: Cylinder02
+    2300042: Cylinder03
+    2300044: Cylinder04
+    2300046: Cylinder05
+    2300048: Cylinder06
+    2300050: Cylinder07
+    2300052: Cylinder08
+    2300054: Cylinder09
+    2300056: Cylinder10
+    2300058: Cylinder11
+    2300060: Cylinder12
+    2300062: Line01 1
+    2300064: Line02
+    2300066: Line02 1
+    2300068: Loft01
+    2300070: Loft01 1
+    2300072: Plane03
+    2300074: "\u0444\u043E\u043D"
+    3300000: Box01
+    3300002: Box01 1
+    3300004: Box02
+    3300006: Box03
+    3300008: Box08
+    3300010: Box09
+    3300012: Box10
+    3300014: Box13
+    3300016: Box14
+    3300018: Box15
+    3300020: Box16
+    3300022: ChamferBox01
+    3300024: ChamferBox02
+    3300026: ChamferBox03
+    3300028: ChamferBox04
+    3300030: ChamferBox05
+    3300032: ChamferBox06
+    3300034: ChamferBox07
+    3300036: ChamferBox08
+    3300038: Cylinder01
+    3300040: Cylinder02
+    3300042: Cylinder03
+    3300044: Cylinder04
+    3300046: Cylinder05
+    3300048: Cylinder06
+    3300050: Cylinder07
+    3300052: Cylinder08
+    3300054: Cylinder09
+    3300056: Cylinder10
+    3300058: Cylinder11
+    3300060: Cylinder12
+    3300062: Line01 1
+    3300064: Line02
+    3300066: Line02 1
+    3300068: Loft01
+    3300070: Loft01 1
+    3300072: Plane03
+    3300074: "\u0444\u043E\u043D"
+    4300000: "\u0444\u043E\u043D"
+    4300002: Box01
+    4300004: Box15
+    4300006: Box14
+    4300008: Box13
+    4300010: Cylinder12
+    4300012: Box10
+    4300014: Cylinder11
+    4300016: Cylinder10
+    4300018: Cylinder09
+    4300020: Box09
+    4300022: Cylinder08
+    4300024: Cylinder07
+    4300026: Cylinder06
+    4300028: Cylinder05
+    4300030: Cylinder04
+    4300032: Cylinder03
+    4300034: Cylinder02
+    4300036: Cylinder01
+    4300038: Box08
+    4300040: ChamferBox08
+    4300042: ChamferBox03
+    4300044: ChamferBox04
+    4300046: Box16
+    4300048: ChamferBox07
+    4300050: Box01
+    4300052: ChamferBox02
+    4300054: ChamferBox01
+    4300056: Loft01
+    4300058: ChamferBox05
+    4300060: ChamferBox06
+    4300062: Line02
+    4300064: Box02
+    4300066: Line01
+    4300068: Line02
+    4300070: Plane03
+    4300072: Loft01
+    4300074: Box03
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
