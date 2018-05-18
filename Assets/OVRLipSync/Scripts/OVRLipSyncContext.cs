@@ -144,6 +144,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
 
         // Turn loopback on/off
 
+        audioMute = false;
         if (Input.GetKeyDown(loopback))
 
         {
@@ -428,7 +429,7 @@ public class OVRLipSyncContext : OVRLipSyncContextBase
 
             case (OVRTouchpad.TouchEvent.SingleTap):
 
-                audioMute = !audioMute;
+                //audioMute = !audioMute;
 
 
 

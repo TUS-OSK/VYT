@@ -107,6 +107,7 @@ public class IKController : MonoBehaviour
         var O = transform.position;
         var o = new Vector2(O.x,O.z);
         var r0 = new Vector2(R0.x,R0.z);
+
         var or1 = r0 - o;
         var R1 = Tracker.transform.position;
         var r1 = new Vector2(R1.x,R1.z);
@@ -117,7 +118,8 @@ public class IKController : MonoBehaviour
     void OnAnimatorIK()
     {
         //spine.transform.rotation = Quaternion.Euler(new Vector3(0,HipRotate(),0));
-        SetBoneLocalRotation(HumanBodyBones.Spine, new Vector3(0, HipRotate(), 0));
+        //SetBoneLocalRotation(HumanBodyBones.Spine, new Vector3(0, HipRotate(), 0));
+        //Debug.Log(HipRotate());
         debug("OnAnimator",97);
         animator.SetLookAtWeight(AnimationWeight);
         animator.SetLookAtPosition(lookObj[0].transform.position);
