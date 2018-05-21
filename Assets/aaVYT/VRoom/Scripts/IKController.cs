@@ -41,9 +41,10 @@ public class IKController : MonoBehaviour
     private float AnimationWeight;
     [SerializeField]
     private GameObject Tracker;
-    [SerializeField]
-    private Transform spine;
     private bool[] handShakeBool;
+    private Vector3 R0;
+    private Vector3 syokir;
+    private float SyokiHeight;
     private void Init()
     {
         animator = GetComponent<Animator>();
@@ -57,8 +58,6 @@ public class IKController : MonoBehaviour
         handShakeBool = new bool[5];
         MakeOpenHandShakeArray(true);
         MakeRotateArray();
-        
-        
     }
     private void MakeRotateArray()
     {
@@ -91,36 +90,43 @@ public class IKController : MonoBehaviour
         }
 
     }
+    private void Set() {
+        Vector3 a = Head.transform.position;
+        Vector3 b = Head.transform.eulerAngles;
+        transform.position = new Vector3(a.x, transform.position.y, a.z);
+        transform.rotation = Quaternion.Euler(0,b.y,0);
+        R0 = Tracker.transform.position;
+        syokir = transform.eulerAngles;
+        SyokiHeight = transform.position.y;
+    }
     private void Start()
     {
         Init();
-
-        Vector3 a = Head.transform.position;
-        syoki = a;
-        transform.position = new Vector3(a.x, transform.position.y, a.z);
-        R0 = Tracker.transform.position;
-
+        Set();
     }
-    private Vector3 syoki;
-    private Vector3 R0;
-    float HipRotate() {
+    Quaternion Rotation() {
         var O = transform.position;
+        var R1 = Tracker.transform.position;
         var o = new Vector2(O.x,O.z);
         var r0 = new Vector2(R0.x,R0.z);
-
-        var or1 = r0 - o;
-        var R1 = Tracker.transform.position;
         var r1 = new Vector2(R1.x,R1.z);
-        var or2 = r1 - o;
-        return Mathf.Acos(Vector2.Dot(or1,or2)/(or1.sqrMagnitude*or2.sqrMagnitude));
-
+        var or1 = (r0 - o).normalized;
+        var or2 = (r1 - o).normalized;
+        var result = Vector2.SignedAngle(or2,or1);
+        result += syokir.y;
+        if (result < 0.1f&&result>-0.1f) return new Quaternion();
+        return Quaternion.Euler(syokir.x,result,syokir.z);
+    }
+    float Height()
+    {
+        return SyokiHeight + Tracker.transform.position.y - R0.y;
+    }
+    private void FixedUpdate()
+    {
+        transform.SetPositionAndRotation(new Vector3(0,Height(),0), Rotation());
     }
     void OnAnimatorIK()
     {
-        //spine.transform.rotation = Quaternion.Euler(new Vector3(0,HipRotate(),0));
-        //SetBoneLocalRotation(HumanBodyBones.Spine, new Vector3(0, HipRotate(), 0));
-        //Debug.Log(HipRotate());
-        debug("OnAnimator",97);
         animator.SetLookAtWeight(AnimationWeight);
         animator.SetLookAtPosition(lookObj[0].transform.position);
         for (int i = 0; i < 4; i++)
@@ -133,7 +139,6 @@ public class IKController : MonoBehaviour
                 animator.SetIKPosition(AvatarIKGoals[i], pos);
                 animator.SetIKRotationWeight(AvatarIKGoals[i], AnimationWeight);
                 animator.SetIKRotation(AvatarIKGoals[i], rot);
-
             }
         }
         for (int t = 0; t <= 1; t++)
@@ -174,9 +179,5 @@ public class IKController : MonoBehaviour
             animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
         }*/
         animator.SetBoneLocalRotation(bone, Quaternion.Euler(eulerRotation));
-        debug(bone.ToString()+"の回転は:"+eulerRotation.ToString(),151);
-    }
-    private void debug(string str,int a) {
-        //Debug.Log(a+":"+str);
     }
 }
