@@ -44,7 +44,6 @@ public class IKController : MonoBehaviour
     private bool[] handShakeBool;
     private Vector3 R0;
     private Vector3 syokir;
-    private float SyokiHeight;
     private void Init()
     {
         animator = GetComponent<Animator>();
@@ -91,13 +90,18 @@ public class IKController : MonoBehaviour
 
     }
     private void Set() {
-        Vector3 a = Head.transform.position;
+        Vector3 a = Tracker.transform.position;
         Vector3 b = Head.transform.eulerAngles;
         transform.position = new Vector3(a.x, transform.position.y, a.z);
         transform.rotation = Quaternion.Euler(0,b.y,0);
         R0 = Tracker.transform.position;
-        syokir = transform.eulerAngles;
-        SyokiHeight = transform.position.y;
+        syokir = Tracker.transform.eulerAngles;
+    }
+    private void LateUpdate()
+    {
+        if (Input.GetKey(KeyCode.S)) {
+            Set();
+        }
     }
     private void Start()
     {
@@ -105,25 +109,11 @@ public class IKController : MonoBehaviour
         Set();
     }
     Quaternion Rotation() {
-        var O = transform.position;
-        var R1 = Tracker.transform.position;
-        var o = new Vector2(O.x,O.z);
-        var r0 = new Vector2(R0.x,R0.z);
-        var r1 = new Vector2(R1.x,R1.z);
-        var or1 = (r0 - o).normalized;
-        var or2 = (r1 - o).normalized;
-        var result = Vector2.SignedAngle(or2,or1);
-        result += syokir.y;
-        if (result < 0.1f&&result>-0.1f) return new Quaternion();
-        return Quaternion.Euler(syokir.x,result,syokir.z);
-    }
-    float Height()
-    {
-        return SyokiHeight + Tracker.transform.position.y - R0.y;
+        return Quaternion.Euler(0,Tracker.transform.eulerAngles.y-syokir.y+180,0);
     }
     private void FixedUpdate()
     {
-        transform.SetPositionAndRotation(new Vector3(0,Height(),0), Rotation());
+        transform.SetPositionAndRotation(Tracker.transform.position, Rotation());
     }
     void OnAnimatorIK()
     {
