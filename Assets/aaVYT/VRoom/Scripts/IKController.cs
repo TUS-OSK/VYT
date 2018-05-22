@@ -42,7 +42,7 @@ public class IKController : MonoBehaviour
     [SerializeField]
     private GameObject Tracker;
     private bool[] handShakeBool;
-    private Vector3 R0;
+
     private Vector3 syokir;
     private void Init()
     {
@@ -94,7 +94,6 @@ public class IKController : MonoBehaviour
         Vector3 b = Head.transform.eulerAngles;
         transform.position = new Vector3(a.x, transform.position.y, a.z);
         transform.rotation = Quaternion.Euler(0,b.y,0);
-        R0 = Tracker.transform.position;
         syokir = Tracker.transform.eulerAngles;
     }
     private void LateUpdate()

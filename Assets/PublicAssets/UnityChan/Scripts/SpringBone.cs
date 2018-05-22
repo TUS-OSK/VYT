@@ -44,6 +44,8 @@ namespace UnityChan
 		private Transform org;
 		//Kobayashi:Reference for "SpringManager" component with unitychan 
 		private SpringManager managerRef;
+        
+        public Vector3 ConstantForce;
 
 		private void Awake ()
 		{
@@ -91,6 +93,8 @@ namespace UnityChan
 			force += (prevTipPos - currTipPos) * dragForce / sqrDt;
 
 			force += springForce / sqrDt;
+
+            force += ConstantForce;
 
 			//前フレームと値が同じにならないように
 			Vector3 temp = currTipPos;

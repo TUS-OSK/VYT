@@ -26,9 +26,12 @@ namespace UnityChan
 		public float			dragForce;
 		public AnimationCurve	dragCurve;
 		public SpringBone[] springBones;
-
+        public Vector3 ConstantForce;
 		void Start ()
 		{
+            for (int i = 0; i<springBones.Length; i++) {
+                springBones[i].ConstantForce = ConstantForce;
+            }
 			UpdateParameters ();
 		}
 	
