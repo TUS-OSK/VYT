@@ -108,7 +108,7 @@ public class IKController : MonoBehaviour
         Set();
     }
     Quaternion Rotation() {
-        return Quaternion.Euler(0,Tracker.transform.eulerAngles.y-syokir.y+180,0);
+        return Quaternion.Euler(0,Tracker.transform.eulerAngles.y-syokir.y,0);
     }
     private void FixedUpdate()
     {
