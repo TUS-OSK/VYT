@@ -147,7 +147,8 @@ public class IKController : MonoBehaviour
                     }
                 }
                 else {
-                    MakeOpenHandShakeArray(true);
+                    Debug.Log("aa");
+                    MakeOpenHandShakeArray(false);
                 }
             }
             HandShake(handShakeBool, t);
