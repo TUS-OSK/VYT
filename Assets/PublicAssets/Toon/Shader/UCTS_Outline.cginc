@@ -53,6 +53,6 @@
                 float3 Set_BaseColor = lerp( node_9970, (node_9970*_LightColor0.rgb), _Is_LightColor_Base );
                 float3 node_2878 = Set_BaseColor;
                 float3 Set_Outline_Color = lerp( _Outline_Color.rgb, (_Outline_Color.rgb*node_2878*node_2878), _Is_BlendBaseColor );
-                return fixed4(Set_Outline_Color,0);
+                return fixed4(Set_Outline_Color,1.0);
             }
 // UCTS_Outline.cginc ここまで.
