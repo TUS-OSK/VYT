@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using Valve.VR.InteractionSystem;
 /// <summary>
@@ -8,7 +6,6 @@ using Valve.VR.InteractionSystem;
 /// </summary>
 public abstract class VRObjectBase : MonoBehaviour
 {
-
     //抽象クラス
 
     [SerializeField]

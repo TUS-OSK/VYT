@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 public class ControllerDebugSample : VRObjectBase
 {
     private bool IsAttached;
-    void Update()
+    void FixedUpdate()
     {
         if (Device != null)
         {
