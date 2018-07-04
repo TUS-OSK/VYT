@@ -138,7 +138,8 @@ public class IKController : MonoBehaviour
                 if (Device.GetPress(SteamVR_Controller.ButtonMask.Grip))
                 {
                     MakeOpenHandShakeArray(false);
-                    handShakeBool[1] = !Device.GetPress(SteamVR_Controller.ButtonMask.Trigger);
+                    //handShakeBool[1] = !Device.GetPress(SteamVR_Controller.ButtonMask.Trigger);
+                    handShakeBool[1] = true;
                     if (Device.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) {
                         Vector2 pos = Device.GetAxis();
                         float a = pos.y / pos.x;
