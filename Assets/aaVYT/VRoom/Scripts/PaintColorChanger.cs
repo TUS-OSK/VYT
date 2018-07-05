@@ -4,9 +4,10 @@ public class PaintColorChanger : HandEvent {
     private Painter Painter;
     protected override void GetTouchpadTouch(Vector2 axis)
     {
-        float angle = Mathf.Atan2(axis.y,axis.x) * 360.0f / (2 * Mathf.PI);
-        float radius = axis.sqrMagnitude;
-        float height = 1.0f;
+        float angle =180.0f + Mathf.Atan2(axis.y,axis.x) * 360.0f / (2 * Mathf.PI);
+        Debug.Log(angle);
+        float radius = 0.5f + axis.sqrMagnitude/2.0f;
+        float height = 0.8f;
         Painter.ChangeColor(new Vector3(angle,radius,height));
     }
 }
