@@ -11,7 +11,7 @@ public class Painter : HandEvent {
     private bool isPainting;
     private Vector3 rgb;
     private TrailRenderer trailRenderer;
-    private float MaxWidth;
+
     private List<GameObject> PaintsObjects;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class Painter : HandEvent {
     public void ChangeColor(Vector3 value) {
         rgb = value;
     }
-    protected override void GetTriggerPressDown()
+    protected override void GetTriggerPressDown(float value)
     {
         PaintStart();
     }
@@ -39,13 +39,14 @@ public class Painter : HandEvent {
         if (!isPainting) return;
         paintObj.transform.position = paintPoint.transform.position;
     }
-    protected override void GetTriggerTouchUp()
+    protected override void GetTriggerTouchUp(float value)
     {
-        if (isPainting) {
+        if (isPainting)
+        {
             PaintStop();
         }
     }
-    protected override void GetTouchpadPressDown()
+    protected override void GetTouchpadPressDown(Vector2 axis)
     {
         Undo();
     }
@@ -58,7 +59,6 @@ public class Painter : HandEvent {
         trailRenderer.startColor = new Color(rgb.x, rgb.y, rgb.z);
         trailRenderer.endColor = new Color(rgb.x, rgb.y, rgb.z);
         trailRenderer.Clear();
-        MaxWidth = paintObj.GetComponent<TrailRenderer>().startWidth;
         isPainting = true;
     }
     protected void PaintStop()

@@ -43,7 +43,7 @@ public abstract class HandEvent : MonoBehaviour
         {
             if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                GetTriggerTouchDown();
+                GetTriggerTouchDown(TriggerValue);
             }
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
             {
@@ -51,12 +51,12 @@ public abstract class HandEvent : MonoBehaviour
             }
             if (Device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                GetTriggerTouchUp();
+                GetTriggerTouchUp(TriggerValue);
             }
 
             if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                GetTriggerPressDown();
+                GetTriggerPressDown(TriggerValue);
             }
             if (Device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
             {
@@ -64,12 +64,12 @@ public abstract class HandEvent : MonoBehaviour
             }
             if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                GetTriggerPressUp();
+                GetTriggerPressUp(TriggerValue);
             }
 
             if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GetTouchpadTouchDown();
+                GetTouchpadTouchDown(TouchpadAxis);
             }
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
@@ -77,20 +77,20 @@ public abstract class HandEvent : MonoBehaviour
             }
             if (Device.GetTouchUp(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GetTouchpadTouchUp();
+                GetTouchpadTouchUp(TouchpadAxis);
             }
 
             if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GetTouchpadPressDown();
+                GetTouchpadPressDown(TouchpadAxis);
             }
             if (Device.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GetTouchpadPress();
+                GetTouchpadPress(TouchpadAxis);
             }
             if (Device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GetTouchpadPressUp();
+                GetTouchpadPressUp(TouchpadAxis);
             }
             
             if (Device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
@@ -120,18 +120,19 @@ public abstract class HandEvent : MonoBehaviour
         }
     }
     
-    protected virtual void GetTriggerTouchDown(){
+    protected virtual void GetTriggerTouchDown(float value)
+    {
 
     }
     protected virtual void GetTriggerTouch(float value)
     {
 
     }
-    protected virtual void GetTriggerTouchUp()
+    protected virtual void GetTriggerTouchUp(float value)
     {
 
     }
-    protected virtual void GetTriggerPressDown()
+    protected virtual void GetTriggerPressDown(float value)
     {
 
     }
@@ -139,10 +140,11 @@ public abstract class HandEvent : MonoBehaviour
     {
 
     }
-    protected virtual void GetTriggerPressUp(){
+    protected virtual void GetTriggerPressUp(float value)
+    {
 
     }
-    protected virtual void GetTouchpadTouchDown()
+    protected virtual void GetTouchpadTouchDown(Vector2 axis)
     {
 
     }
@@ -150,19 +152,19 @@ public abstract class HandEvent : MonoBehaviour
     {
 
     }
-    protected virtual void GetTouchpadTouchUp()
+    protected virtual void GetTouchpadTouchUp(Vector2 axis)
     {
 
     }
-    protected virtual void GetTouchpadPressDown()
+    protected virtual void GetTouchpadPressDown(Vector2 axis)
     {
 
     }
-    protected virtual void GetTouchpadPress()
+    protected virtual void GetTouchpadPress(Vector2 axis)
     {
 
     }
-    protected virtual void GetTouchpadPressUp()
+    protected virtual void GetTouchpadPressUp(Vector2 axis)
     {
 
     }
