@@ -21,7 +21,7 @@ public class UISizeFitting : MonoBehaviour {
 
         //Panelの大きさ取得
         RectTransform parRect = this.transform.parent.gameObject.GetComponent<RectTransform>();
-        Debug.Log(parRect.offsetMax.x +" " + parRect.offsetMin.x + " " + parRect.offsetMax.y + " " + parRect.offsetMin.y);
+        //Debug.Log(parRect.offsetMax.x +" " + parRect.offsetMin.x + " " + parRect.offsetMax.y + " " + parRect.offsetMin.y);
         panelWidth = UIPanel.x - (-parRect.offsetMax.x + parRect.offsetMin.x);
         panelHeight = UIPanel.y - (-parRect.offsetMax.y + parRect.offsetMin.y);
         Debug.Log(this.transform.parent.name + panelWidth + ":" + panelHeight);

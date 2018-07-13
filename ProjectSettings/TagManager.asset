@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - VRObject
+  - VRItem
   layers:
   - Default
   - TransparentFX

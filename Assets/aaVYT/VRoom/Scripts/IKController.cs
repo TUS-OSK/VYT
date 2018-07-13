@@ -43,6 +43,11 @@ public class IKController : MonoBehaviour
     private GameObject Tracker;
     private bool[] handShakeBool;
 
+    [SerializeField]
+    private float asisita;
+    [SerializeField]
+    private float kosiue;
+
     private Vector3 syokir;
     private void Init()
     {
@@ -112,7 +117,7 @@ public class IKController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.SetPositionAndRotation(Tracker.transform.position, Rotation());
+        transform.SetPositionAndRotation(Tracker.transform.position + new Vector3(0,kosiue , 0), Rotation());
     }
     void OnAnimatorIK()
     {
@@ -123,6 +128,7 @@ public class IKController : MonoBehaviour
             if (IKGoalTransforms[i] != null)
             {
                 Vector3 pos = IKGoalTransforms[i].position;
+                if (i == 2 || i == 3) pos += new Vector3(0,-asisita,0);
                 Quaternion rot = IKGoalTransforms[i].rotation;
                 animator.SetIKPositionWeight(AvatarIKGoals[i], AnimationWeight);
                 animator.SetIKPosition(AvatarIKGoals[i], pos);
